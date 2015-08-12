@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Listview hideDividers Example</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<script>
+$.mobile.document
+	.on( "click", ".hide-items a", function( event ) {
+            alert($( event.target ).attr( "data-id" ));
+	});
+	</script>
+</head>
+
+<body>
+<div data-role="page" id="myPage" style="max-height:640px; min-height:640px;">
+	<div role="main" class="ui-content">
+		<p>Click on the list items below to hide them. As you hide more and more items, you can observe the difference <code>hideDividers</code> makes.</p>
+		<div class="ui-grid-a">
+			<div class="ui-block-a ui-content">
+				<p><code>hideDividers</code> option set to <code>false</code>.</p>
+			</div>
+			<div class="ui-block-b ui-content">
+				<p><code>hideDividers</code> option set to <code>true</code>.</p>
+			</div>
+			<div class="ui-block-a ui-content">
+				<ul class="hide-items" data-role="listview" data-inset="true">
+					<li data-role="list-divider">Mammals</li>
+					<li><a data-id="hide-item1" href="#">Dolphin</a></li>
+					<li><a data-role="hide-item2" href="#">Lemur</a></li>
+					<li data-role="list-divider">Reptiles</li>
+					<li><a data-role="hide-item3" href="#">Cobra</a></li>
+					<li><a data-role="hide-item4" href="#">Gecko</a></li>
+					<li data-role="list-divider">Fish</li>
+					<li><a data-role="hide-item5" href="#">Salmon</a></li>
+					<li><a data-role="hide-item6" href="#">Pollock</a></li>
+				</ul>
+			</div>
+			<div class="ui-block-b ui-content">
+				<ul class="hide-items" data-role="listview" data-inset="true" data-hide-dividers="true">
+					<li data-role="list-divider">Mammals</li>
+					<li><a data-role="hide-item1" href="#">Dolphin</a></li>
+					<li><a data-role="hide-item2" href="#">Lemur</a></li>
+					<li data-role="list-divider">Reptiles</li>
+					<li><a data-role="hide-item3" href="#">Cobra</a></li>
+					<li><a data-role="hide-item4" href="#">Gecko</a></li>
+					<li data-role="list-divider">Fish</li>
+					<li><a data-role="hide-item5" href="#">Salmon</a></li>
+					<li><a data-role="hide-item6" href="#">Pollock</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="ui-grid-solo ui-content">
+			<div class="ui-block-a">
+				<a href="#" id="restore" class="ui-btn ui-corner-all ui-shadow">Restore</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
